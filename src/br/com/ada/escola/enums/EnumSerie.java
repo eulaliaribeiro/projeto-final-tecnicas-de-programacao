@@ -1,0 +1,11 @@
+package br.com.ada.escola.enums;
+
+public enum EnumSerie {
+    SEXTO_ANO_FUNDAMENTAL,
+    SETIMO_ANO_FUNDAMENTAL,
+    OITAVO_ANO_FUNDAMENTAL,
+    NONO_ANO_FUNDAMENTAL,
+    PRIMEIRO_ANO_MEDIO,
+    SEGUNDO_ANO_MEDIO,
+    TERCEIRO_ANO_MEDIO
+}
