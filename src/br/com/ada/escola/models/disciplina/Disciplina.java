@@ -13,7 +13,7 @@ public class Disciplina {
     EnumDisciplina nomeDisciplina;
     Professor professor;
     EnumSerie serie;
-    List<EnumDiasDaSemana> dias = new ArrayList<>();
+    List<EnumDiasDaSemana> dias;
     LocalTime horario;
 
     public Disciplina(EnumDisciplina nomeDisciplina, Professor professor, EnumSerie serie, List<EnumDiasDaSemana> dias, LocalTime horario) {
@@ -21,6 +21,46 @@ public class Disciplina {
         this.professor = professor;
         this.serie = serie;
         this.dias = dias;
+        this.horario = horario;
+    }
+
+    public EnumDisciplina getNomeDisciplina() {
+        return nomeDisciplina;
+    }
+
+    public void setNomeDisciplina(EnumDisciplina nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
+    }
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public EnumSerie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(EnumSerie serie) {
+        this.serie = serie;
+    }
+
+    public List<EnumDiasDaSemana> getDias() {
+        return dias;
+    }
+
+    public void setDias(List<EnumDiasDaSemana> dias) {
+        this.dias = dias;
+    }
+
+    public LocalTime getHorario() {
+        return horario;
+    }
+
+    public void setHorario(LocalTime horario) {
         this.horario = horario;
     }
 }

@@ -13,7 +13,7 @@ public class Aluno extends Pessoa {
     String nomeDoPai;
     String matricula;
     EnumSerie serie;
-    List<Disciplina> disciplinas = new ArrayList<>();
+    List<Disciplina> disciplinas;
 
     public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, String matricula, EnumSerie serie, List<Disciplina> disciplinas) {
         super(nome, dataNascimento, cpf, endereco);
@@ -24,4 +24,43 @@ public class Aluno extends Pessoa {
         this.disciplinas = disciplinas;
     }
 
+    public String getNomeDaMae() {
+        return nomeDaMae;
+    }
+
+    public void setNomeDaMae(String nomeDaMae) {
+        this.nomeDaMae = nomeDaMae;
+    }
+
+    public String getNomeDoPai() {
+        return nomeDoPai;
+    }
+
+    public void setNomeDoPai(String nomeDoPai) {
+        this.nomeDoPai = nomeDoPai;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public EnumSerie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(EnumSerie serie) {
+        this.serie = serie;
+    }
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
+    }
 }
