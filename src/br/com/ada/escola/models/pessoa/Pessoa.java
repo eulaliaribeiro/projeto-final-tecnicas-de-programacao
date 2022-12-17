@@ -5,10 +5,10 @@ import br.com.ada.escola.models.pessoa.endereco.Endereco;
 import java.time.LocalDate;
 
 public class Pessoa {
-    String nome;
-    LocalDate dataNascimento;
-    String cpf;
-    Endereco endereco;
+    private String nome;
+    private LocalDate dataNascimento;
+    private String cpf;
+    private Endereco endereco;
 
     public Pessoa(String nome, LocalDate dataNascimento, String cpf, Endereco endereco) {
         this.nome = nome;

@@ -8,6 +8,7 @@ public class EnderecoBuilder {
     private String cidade;
     private String uf;
 
+
     public EnderecoBuilder rua(String rua) {
         this.rua = rua;
         return this;

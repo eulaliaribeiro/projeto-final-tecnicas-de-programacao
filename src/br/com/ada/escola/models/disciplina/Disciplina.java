@@ -3,18 +3,17 @@ package br.com.ada.escola.models.disciplina;
 import br.com.ada.escola.enums.EnumDiasDaSemana;
 import br.com.ada.escola.enums.EnumDisciplina;
 import br.com.ada.escola.enums.EnumSerie;
-import br.com.ada.escola.models.pessoa.Professor;
+import br.com.ada.escola.models.pessoa.professor.Professor;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Disciplina {
-    EnumDisciplina nomeDisciplina;
-    Professor professor;
-    EnumSerie serie;
-    List<EnumDiasDaSemana> dias;
-    LocalTime horario;
+    private EnumDisciplina nomeDisciplina;
+    private Professor professor;
+    private  EnumSerie serie;
+    private List<EnumDiasDaSemana> dias;
+    private LocalTime horario;
 
     public Disciplina(EnumDisciplina nomeDisciplina, Professor professor, EnumSerie serie, List<EnumDiasDaSemana> dias, LocalTime horario) {
         this.nomeDisciplina = nomeDisciplina;
@@ -62,5 +61,16 @@ public class Disciplina {
 
     public void setHorario(LocalTime horario) {
         this.horario = horario;
+    }
+
+    @Override
+    public String toString() {
+        return "Disciplina{" +
+                "nomeDisciplina=" + nomeDisciplina +
+                ", professor=" + professor +
+                ", serie=" + serie +
+                ", dias=" + dias +
+                ", horario=" + horario +
+                '}';
     }
 }
