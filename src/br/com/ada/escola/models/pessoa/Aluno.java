@@ -9,15 +9,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Aluno extends Pessoa {
-   private String nomeDaMae;
-   private String nomeDoPai;
-   private int matricula;
-   private EnumSerie serie;
-   private List<Disciplina> disciplinas;
+    private String nomeDaMae;
+    private String nomeDoPai;
+    private int matricula;
+    private EnumSerie serie;
+    private List<Disciplina> disciplinas;
 
-   private Turma turma;
+    private Turma turma;
 
-   private static int sequenceMatricula = 1;
+    private static int sequenceMatricula = 1;
 
     public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, EnumSerie serie, List<Disciplina> disciplinas, Turma turma) {
         super(nome, dataNascimento, cpf, endereco);
@@ -50,7 +50,7 @@ public class Aluno extends Pessoa {
     }
 
     public void setMatricula(int matricula) {
-        if (getMatricula() == 0){
+        if (getMatricula() == 0) {
             this.matricula = matricula;
             sequenceMatricula++;
         } else {
@@ -85,12 +85,12 @@ public class Aluno extends Pessoa {
     @Override
     public String toString() {
         return "Aluno{" +
-                "nome='" + getNome() + '\'' +
+                " matricula=" + matricula +
+                ", nome='" + getNome() + '\'' +
                 ", dataNascimento=" + getDataNascimento() +
                 ", cpf='" + getCpf() + '\'' +
                 ", nomeDaMae='" + nomeDaMae + '\'' +
                 ", nomeDoPai='" + nomeDoPai + '\'' +
-                ", matricula=" + matricula +
                 ", serie=" + serie +
                 ", disciplinas=" + disciplinas +
                 ", turma=" + turma +

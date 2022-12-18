@@ -12,15 +12,18 @@ import br.com.ada.escola.models.pessoa.endereco.EnderecoBuilder;
 import br.com.ada.escola.models.turma.Turma;
 import br.com.ada.escola.repository.GerenteBancodeDadosAluno;
 import br.com.ada.escola.repository.GerenteDeArquivo;
+import br.com.ada.escola.repository.GerenteStreamAluno;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.io.Serializable;
+import java.util.Scanner;
 
-public class Teste {
+public class Teste implements Serializable{
     static GerenteBancodeDadosAluno gerenteBancodeDadosAluno = new GerenteBancodeDadosAluno();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Endereco endereco = new EnderecoBuilder()
                 .rua("Rua das Flores")
                 .numero("190")
@@ -57,19 +60,22 @@ public class Teste {
                 turma1);
 
         GerenteDeArquivo gerenteDeArquivo = new GerenteDeArquivo();
-//        //gerenteDeArquivo.criarArquivoDeBanco("alunos.txt");
-//        gerenteBancodeDadosAluno.cadastraAluno(
-//                new Aluno("Bianca",
-//                        LocalDate.of(2008,9,16),
-//                        "09287459632",
-//                        endereco,
-//                        "Joana",
-//                        "André",
-//                        EnumSerie.PRIMEIRO_ANO_MEDIO,
-//                        null,
-//                        turma1)
-//        );
-        gerenteBancodeDadosAluno.retornarAlunos().stream().forEach(System.out::println);
+        gerenteBancodeDadosAluno.cadastraAluno(
+                new Aluno("Amanda",
+                        LocalDate.of(2008, 9, 16),
+                        "09287459632",
+                        endereco,
+                        "Joana",
+                        "André",
+                        EnumSerie.PRIMEIRO_ANO_MEDIO,
+                        null,
+                        turma1)
+        );
+         gerenteBancodeDadosAluno.retornarAlunos().stream().forEach(System.out::println);
+
+        var gerenteStreamAluno = new GerenteStreamAluno(gerenteBancodeDadosAluno);
+        gerenteStreamAluno.mostreOrdenadoPorNome();
+
 
 
     }

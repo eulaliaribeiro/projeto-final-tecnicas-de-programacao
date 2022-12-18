@@ -5,10 +5,13 @@ import br.com.ada.escola.enums.EnumDisciplina;
 import br.com.ada.escola.enums.EnumSerie;
 import br.com.ada.escola.models.pessoa.professor.Professor;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.List;
+import java.io.Serializable;
 
-public class Disciplina {
+public class Disciplina implements Serializable {
+    public static final long serialVersionUID = 1L;
     private EnumDisciplina nomeDisciplina;
     private Professor professor;
     private  EnumSerie serie;

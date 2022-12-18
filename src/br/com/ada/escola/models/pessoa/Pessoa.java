@@ -3,8 +3,11 @@ package br.com.ada.escola.models.pessoa;
 import br.com.ada.escola.models.pessoa.endereco.Endereco;
 
 import java.time.LocalDate;
+import java.io.Serializable;
 
-public class Pessoa {
+public class Pessoa implements Serializable {
+
+    public static final long serialVersionUID = 1L;
     private String nome;
     private LocalDate dataNascimento;
     private String cpf;

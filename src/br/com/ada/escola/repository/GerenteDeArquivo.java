@@ -4,14 +4,17 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class GerenteDeArquivo {
 
-   // private String caminhoDoArquivo = "src/resources/banco/";
-    private String caminhoDoArquivo = "C:/Users/HP/IdeaProjects/projeto-final-tecnicas-de-programacao/src/resources/files/";
+    private String caminhoDoArquivo = "src/resources/files/";
+    //private String caminhoDoArquivo = "C:/Users/HP/IdeaProjects/projeto-final-tecnicas-de-programacao/src/resources/files/";
 
     public void criarArquivoDeBanco(String nomeDoArquivo) {
-        File novoArquivo = new File(caminhoDoArquivo + nomeDoArquivo);
+        Path path = Paths.get(caminhoDoArquivo + nomeDoArquivo);
+        File novoArquivo = path.toFile();
+        System.out.println(novoArquivo);
 
         try {
             if (novoArquivo.createNewFile()) {
@@ -36,8 +39,8 @@ public class GerenteDeArquivo {
     }
 
     public File getArquivoDeBanco(String nomeDoArquivo) {
-        return Path.of(caminhoDoArquivo + nomeDoArquivo).toFile();
+        Path path = Path.of(caminhoDoArquivo + nomeDoArquivo);
+        File arquivo = path.toFile();
+        return arquivo;
     }
-
-
 }

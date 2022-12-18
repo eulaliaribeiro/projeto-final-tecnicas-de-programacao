@@ -11,21 +11,31 @@ public class GerenteBancodeDadosAluno {
     public GerenteDeArquivo gerenteDeArquivo = new GerenteDeArquivo();
 
     public ArrayList<Aluno> retornarAlunos() {
+        carregarDados();
         return listaDeAlunos;
     }
 
-    public void cadastraAluno(Aluno aluno) {
+    public void cadastraAluno(Aluno aluno) throws IOException {
+
         var file = gerenteDeArquivo.getArquivoDeBanco("alunos.txt");
+
+        if (!file.exists()) {
+            gerenteDeArquivo.criarArquivoDeBanco("alunos.txt");
+        }
+
+        carregarDados();
         listaDeAlunos.add(aluno);
-        try (var out = new ObjectOutputStream(new BufferedOutputStream(Files.newOutputStream(file.toPath())))) {
+
+        var fileOutputStream = new FileOutputStream(file);
+        var bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+        try (var out = new ObjectOutputStream(bufferedOutputStream)) {
             for (Aluno item : listaDeAlunos) {
+                System.out.println("cadastrou");
                 out.writeObject(item);
             }
         } catch (IOException e) {
-
             throw new RuntimeException(e);
         }
-        carregarDados();
     }
 
     public void carregarDados() {
@@ -35,22 +45,11 @@ public class GerenteBancodeDadosAluno {
             while (true) {
                 var objeto = in.readObject();
                 if (objeto instanceof Aluno a) {
-                    listaDeAlunos.add(a);
+                   listaDeAlunos.add(a);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Não carregou dados.");
-            //tratamento
+            System.out.println();
         }
     }
-
-    public void editarAluno(String idContato, Aluno aluno) {
-
-    }
-
-    public boolean deletarAluno() {
-        return false;
-    }
-
-
 }
