@@ -22,13 +22,25 @@ public class MatricularAluno implements Serializable {
         System.out.println("Digite o nome do aluno:");
         String nome = sc.next();
 
+        System.out.println("Digite a matricula do aluno:");
+        int matricula = sc.nextInt();
+
         System.out.println("Digite o cpf do aluno:");
         String cpf = sc.next();
+
+        System.out.println("Digite o nome da mãe do aluno:");
+        String nomeMae = sc.next();
+
+        System.out.println("Digite o nome do pai do aluno:");
+        String nomePai = sc.next();
+
+        System.out.println("\n- Agora vamos cadastrar o endereço do aluno");
+        Endereco endereco = CadastroEndereco.cadastra(sc);
 
         gerenteBancodeDadosAluno.cadastraAluno(new Aluno(nome,
                 LocalDate.of(2008, 9, 16),
                 cpf,
-                new Endereco()));
+                endereco));
 
     }
 }

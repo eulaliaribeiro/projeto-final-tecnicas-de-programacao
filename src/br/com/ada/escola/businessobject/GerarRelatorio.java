@@ -1,4 +1,5 @@
 package br.com.ada.escola.businessobject;
+
 import br.com.ada.escola.repository.GerenteBancodeDadosAluno;
 import br.com.ada.escola.repository.GerenteStreamAluno;
 
@@ -17,14 +18,15 @@ public class GerarRelatorio {
         do {
             try {
                 System.out.println("\n- MENU DE RELATORIOS -\n");
-                System.out.println("Por favor, informe a opção desejada: ");
-                System.out.println("Digite: ");
+                System.out.println("Escolha: ");
                 System.out.println("1 - Pesquisar aluno por nome");
                 System.out.println("2 - Relatório de todos os alunos matriculados (ordem alabética)");
                 System.out.println("3 - Relatório de alunos por turma");
                 System.out.println("4 - Relatório de profesores");
                 System.out.println("5 - Relatório de turmas");
                 System.out.println("6 - Voltar ao menu principal");
+                System.out.println("Por favor, informe a opção desejada: ");
+
 
                 opcaoMenu = sc.nextInt();
                 switch (opcaoMenu) {

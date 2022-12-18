@@ -19,18 +19,19 @@ public class Aluno extends Pessoa {
 
     private static int sequenceMatricula = 1;
 
-    public Aluno(String nome,LocalDate dataNascimento, String cpf,Endereco endereco){
-        super(nome, dataNascimento, cpf, endereco);;
+    public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco) {
+        super(nome, dataNascimento, cpf, endereco);
+
     }
 
-    public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, EnumSerie serie, List<Disciplina> disciplinas, Turma turma) {
+    public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, int matricula, EnumSerie serie, List<Disciplina> disciplinas, Turma turma) {
         super(nome, dataNascimento, cpf, endereco);
         this.nomeDaMae = nomeDaMae;
         this.nomeDoPai = nomeDoPai;
+        this.matricula = matricula;
         this.serie = serie;
         this.disciplinas = disciplinas;
         this.turma = turma;
-        setMatricula(sequenceMatricula);
     }
 
     public String getNomeDaMae() {
@@ -54,12 +55,7 @@ public class Aluno extends Pessoa {
     }
 
     public void setMatricula(int matricula) {
-        if (getMatricula() == 0) {
-            this.matricula = matricula;
-            sequenceMatricula++;
-        } else {
-            System.out.println("Aluno já possui matricula, não é possível alterar");
-        }
+        this.matricula = matricula;
     }
 
     public EnumSerie getSerie() {
@@ -89,8 +85,8 @@ public class Aluno extends Pessoa {
     @Override
     public String toString() {
         return "Aluno{" +
-                " matricula=" + matricula +
-                ", nome='" + getNome() + '\'' +
+                " nome='" + getNome() + '\'' +
+                ", matricula=" + matricula +
                 ", dataNascimento=" + getDataNascimento() +
                 ", cpf='" + getCpf() + '\'' +
                 ", nomeDaMae='" + nomeDaMae + '\'' +

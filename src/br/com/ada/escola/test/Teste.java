@@ -53,6 +53,7 @@ public class Teste implements Serializable{
                         endereco,
                         "Joana",
                         "André",
+                        1,
                         EnumSerie.PRIMEIRO_ANO_MEDIO,
                         null,
                         turma1)
