@@ -10,14 +10,24 @@ import java.util.List;
 public class Turma implements Serializable{
 
     public static final long serialVersionUID = 1L;
+    private String nomeTurma;
     private EnumPeriodo periodo;
     private Disciplina disciplina;
     private Professor professor;
 
-    public Turma(EnumPeriodo periodo, Disciplina disciplina, Professor professor) {
+    public Turma(String nomeTurma,EnumPeriodo periodo, Disciplina disciplina, Professor professor) {
+        this.nomeTurma = nomeTurma;
         this.periodo = periodo;
         this.disciplina = disciplina;
         this.professor = professor;
+    }
+
+    public String getNomeTurma() {
+        return nomeTurma;
+    }
+
+    public void setNomeTurma(String nomeTurma) {
+        this.nomeTurma = nomeTurma;
     }
 
     public EnumPeriodo getPeriodo() {

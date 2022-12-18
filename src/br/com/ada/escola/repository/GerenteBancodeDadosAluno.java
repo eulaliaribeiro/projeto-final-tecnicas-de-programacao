@@ -30,7 +30,6 @@ public class GerenteBancodeDadosAluno {
         var bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
         try (var out = new ObjectOutputStream(bufferedOutputStream)) {
             for (Aluno item : listaDeAlunos) {
-                System.out.println("cadastrou");
                 out.writeObject(item);
             }
         } catch (IOException e) {

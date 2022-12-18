@@ -19,6 +19,10 @@ public class Aluno extends Pessoa {
 
     private static int sequenceMatricula = 1;
 
+    public Aluno(String nome,LocalDate dataNascimento, String cpf,Endereco endereco){
+        super(nome, dataNascimento, cpf, endereco);;
+    }
+
     public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, EnumSerie serie, List<Disciplina> disciplinas, Turma turma) {
         super(nome, dataNascimento, cpf, endereco);
         this.nomeDaMae = nomeDaMae;

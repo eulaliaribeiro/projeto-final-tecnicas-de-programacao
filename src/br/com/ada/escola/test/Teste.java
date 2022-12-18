@@ -11,14 +11,11 @@ import br.com.ada.escola.models.pessoa.endereco.Endereco;
 import br.com.ada.escola.models.pessoa.endereco.EnderecoBuilder;
 import br.com.ada.escola.models.turma.Turma;
 import br.com.ada.escola.repository.GerenteBancodeDadosAluno;
-import br.com.ada.escola.repository.GerenteDeArquivo;
-import br.com.ada.escola.repository.GerenteStreamAluno;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.Serializable;
-import java.util.Scanner;
 
 public class Teste implements Serializable{
     static GerenteBancodeDadosAluno gerenteBancodeDadosAluno = new GerenteBancodeDadosAluno();
@@ -47,21 +44,10 @@ public class Teste implements Serializable{
                 .horario(LocalTime.of(14, 30))
                 .build();
 
-        Turma turma1 = new Turma(EnumPeriodo.MATUTINO, matematica, professor);
+        Turma turma1 = new Turma("1C",EnumPeriodo.MATUTINO, matematica, professor);
 
-        Aluno aluno = new Aluno("Bianca",
-                LocalDate.of(2008, 9, 16),
-                "09287459632",
-                endereco,
-                "Joana",
-                "André",
-                EnumSerie.PRIMEIRO_ANO_MEDIO,
-                null,
-                turma1);
-
-        GerenteDeArquivo gerenteDeArquivo = new GerenteDeArquivo();
         gerenteBancodeDadosAluno.cadastraAluno(
-                new Aluno("Amanda",
+                new Aluno("Lucas",
                         LocalDate.of(2008, 9, 16),
                         "09287459632",
                         endereco,
@@ -71,12 +57,7 @@ public class Teste implements Serializable{
                         null,
                         turma1)
         );
-         gerenteBancodeDadosAluno.retornarAlunos().stream().forEach(System.out::println);
-
-        var gerenteStreamAluno = new GerenteStreamAluno(gerenteBancodeDadosAluno);
-        gerenteStreamAluno.mostreOrdenadoPorNome();
-
-
+        gerenteBancodeDadosAluno.retornarAlunos().stream().forEach(System.out::println);
 
     }
 }

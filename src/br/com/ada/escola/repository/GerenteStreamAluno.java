@@ -20,4 +20,15 @@ public class GerenteStreamAluno {
         System.out.println("---------------------");
     }
 
+    public void pesquisarPorTurma(String turma){
+        gerenteBancodeDados.retornarAlunos().stream().
+                filter(item -> item.getTurma().getNomeTurma().contentEquals(turma))
+                .forEach(System.out::println);
+    }
+    public void pesquisarPorNome(String nome){
+        gerenteBancodeDados.retornarAlunos().stream().
+                filter(item -> item.getNome().toUpperCase().equals(nome.toUpperCase()))
+                .forEach(System.out::println);
+    }
+
 }
