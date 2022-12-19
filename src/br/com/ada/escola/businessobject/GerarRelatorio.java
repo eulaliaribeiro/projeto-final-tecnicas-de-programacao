@@ -19,7 +19,7 @@ public class GerarRelatorio {
     public static void opcoesRelatorio(Scanner sc) {
         Scanner scOpcao = new Scanner(System.in);
         var gerenteStreamAluno = new GerenteStreamAluno(gerenteBancodeDadosAluno);
-        final int OPCAO_SAIR = 6;
+        final int OPCAO_SAIR = 5;
         int opcaoMenu = 0;
         do {
             try {
@@ -27,8 +27,8 @@ public class GerarRelatorio {
                 System.out.println("Escolha: ");
                 System.out.println("1 - Pesquisar aluno por nome");
                 System.out.println("2 - Relatório de todos os alunos matriculados (ordem alabética)");
-                System.out.println("3- Relatório de todos os profesores");
-                System.out.println("4- Relatório de todas as turmas");
+                System.out.println("3 - Relatório de todos os profesores");
+                System.out.println("4 - Relatório de todas as turmas");
                 System.out.println("5 - Voltar ao menu principal");
                 System.out.println("Por favor, informe a opção desejada: ");
 
@@ -46,7 +46,7 @@ public class GerarRelatorio {
                      case 3:
                         gerenteBancodeDadosProfessor.retornarProfessores().stream().forEach(System.out::println);
                         break;
-                    case 5:
+                    case 4:
                         gerenteBancodeDadosTurma.retornarTurmas().stream().forEach(System.out::println);
                         break;
                     default:

@@ -18,10 +18,10 @@ public class CadastrarProfessor {
             System.out.println("*** Cadastrro De Professor ***");
 
             System.out.println("Digite o nome do professor:");
-            String nome = sc.nextLine();
+            String nome = sc.next();
 
             System.out.println("Digite o cpf do professor:");
-            String cpf = sc.nextLine();
+            String cpf = sc.next();
 
             System.out.println("\n- Agora vamos cadastrar o endereço do professor");
             Endereco endereco = CadastroEndereco.cadastra(sc);

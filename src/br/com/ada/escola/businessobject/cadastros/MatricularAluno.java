@@ -20,16 +20,16 @@ public class MatricularAluno implements Serializable {
         System.out.println("*** Cadastrro De Aluno ***");
 
         System.out.println("Digite o nome do aluno:");
-        String nome = sc.nextLine();
+        String nome = sc.next();
 
         System.out.println("Digite a matricula do aluno:");
         int matricula = sc.nextInt();
 
         System.out.println("Digite o cpf do aluno:");
-        String cpf = sc.nextLine();
+        String cpf = sc.next();
 
         System.out.println("Digite o nome da mãe do aluno:");
-        String nomeMae = sc.nextLine();
+        String nomeMae = sc.next();
 
         System.out.println("Digite o nome do pai do aluno:");
         String nomePai = sc.next();

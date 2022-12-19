@@ -36,7 +36,7 @@ public class Menu {
                         CadastrarProfessor.cadastrar(sc);
                         break;
                     case 3:
-                   //     CadastrarTurma.cadastrar(sc);
+                        CadastrarTurma.cadastrar(sc);
                         break;
                     case 4:
                         GerarRelatorio.opcoesRelatorio(sc);

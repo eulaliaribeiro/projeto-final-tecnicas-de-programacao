@@ -18,18 +18,20 @@ public class CadastrarTurma {
         System.out.println("*** Cadastrro De Turma ***");
 
         System.out.println("Digite o nome da turma:");
-        String nome = sc.nextLine();
+        String nome = sc.next();
 
         System.out.println();
         GerenteBancodeDadosProfessor gerenteBancodeDadosProfessor = new GerenteBancodeDadosProfessor();
         var gerenteStreamProfessor = new GerenteStreamProfessor(gerenteBancodeDadosProfessor);
         gerenteStreamProfessor.mostreOrdenadoPorNome();
         System.out.println("Digite o nome de um professor da lista para ser o responsável pela turma :");
-        String nomeProfesor = sc.nextLine();
+        String nomeProfesor = sc.next();
         Professor professor = gerenteStreamProfessor.filtrarPorNome(nomeProfesor);
 
 
+        System.out.println(professor);
         gerenteBancodeDadosTurma.cadastraTurma(new Turma(nome, null, professor));
+        System.out.println("Turma cadastrada com sucesso!\n");
 
     }
 }
