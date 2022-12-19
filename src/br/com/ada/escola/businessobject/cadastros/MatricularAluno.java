@@ -20,16 +20,16 @@ public class MatricularAluno implements Serializable {
         System.out.println("*** Cadastrro De Aluno ***");
 
         System.out.println("Digite o nome do aluno:");
-        String nome = sc.next();
+        String nome = sc.nextLine();
 
         System.out.println("Digite a matricula do aluno:");
         int matricula = sc.nextInt();
 
         System.out.println("Digite o cpf do aluno:");
-        String cpf = sc.next();
+        String cpf = sc.nextLine();
 
         System.out.println("Digite o nome da mãe do aluno:");
-        String nomeMae = sc.next();
+        String nomeMae = sc.nextLine();
 
         System.out.println("Digite o nome do pai do aluno:");
         String nomePai = sc.next();
@@ -41,6 +41,8 @@ public class MatricularAluno implements Serializable {
                 LocalDate.of(2008, 9, 16),
                 cpf,
                 endereco));
+
+        System.out.println("Aluno matriculado com sucesso!\n");
 
     }
 }

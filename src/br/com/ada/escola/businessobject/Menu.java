@@ -33,10 +33,10 @@ public class Menu {
                         MatricularAluno.matricular(sc);
                         break;
                     case 2:
-                        CadastrarProfessor.cadastrar();
+                        CadastrarProfessor.cadastrar(sc);
                         break;
                     case 3:
-                        CadastrarTurma.cadastrar();
+                   //     CadastrarTurma.cadastrar(sc);
                         break;
                     case 4:
                         GerarRelatorio.opcoesRelatorio(sc);

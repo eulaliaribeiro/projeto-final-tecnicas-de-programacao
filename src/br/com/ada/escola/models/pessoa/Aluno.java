@@ -1,7 +1,6 @@
 package br.com.ada.escola.models.pessoa;
 
 import br.com.ada.escola.enums.EnumSerie;
-import br.com.ada.escola.models.disciplina.Disciplina;
 import br.com.ada.escola.models.pessoa.endereco.Endereco;
 import br.com.ada.escola.models.turma.Turma;
 
@@ -13,8 +12,6 @@ public class Aluno extends Pessoa {
     private String nomeDoPai;
     private int matricula;
     private EnumSerie serie;
-    private List<Disciplina> disciplinas;
-
     private Turma turma;
 
     private static int sequenceMatricula = 1;
@@ -24,13 +21,12 @@ public class Aluno extends Pessoa {
 
     }
 
-    public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, int matricula, EnumSerie serie, List<Disciplina> disciplinas, Turma turma) {
+    public Aluno(String nome, LocalDate dataNascimento, String cpf, Endereco endereco, String nomeDaMae, String nomeDoPai, int matricula, EnumSerie serie, Turma turma) {
         super(nome, dataNascimento, cpf, endereco);
         this.nomeDaMae = nomeDaMae;
         this.nomeDoPai = nomeDoPai;
         this.matricula = matricula;
         this.serie = serie;
-        this.disciplinas = disciplinas;
         this.turma = turma;
     }
 
@@ -65,15 +61,6 @@ public class Aluno extends Pessoa {
     public void setSerie(EnumSerie serie) {
         this.serie = serie;
     }
-
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
-
     public Turma getTurma() {
         return turma;
     }
@@ -92,7 +79,6 @@ public class Aluno extends Pessoa {
                 ", nomeDaMae='" + nomeDaMae + '\'' +
                 ", nomeDoPai='" + nomeDoPai + '\'' +
                 ", serie=" + serie +
-                ", disciplinas=" + disciplinas +
                 ", turma=" + turma +
                 ", endereco=" + getEndereco() +
                 '}';

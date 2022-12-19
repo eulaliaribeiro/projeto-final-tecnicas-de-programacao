@@ -1,13 +1,19 @@
 package br.com.ada.escola.businessobject;
 
+import br.com.ada.escola.models.pessoa.Aluno;
 import br.com.ada.escola.repository.GerenteBancodeDadosAluno;
+import br.com.ada.escola.repository.GerenteBancodeDadosProfessor;
+import br.com.ada.escola.repository.GerenteBancodeDadosTurma;
 import br.com.ada.escola.repository.GerenteStreamAluno;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class GerarRelatorio {
 
     static GerenteBancodeDadosAluno gerenteBancodeDadosAluno = new GerenteBancodeDadosAluno();
+    static GerenteBancodeDadosProfessor gerenteBancodeDadosProfessor = new GerenteBancodeDadosProfessor();
+    static GerenteBancodeDadosTurma gerenteBancodeDadosTurma = new GerenteBancodeDadosTurma();
 
 
     public static void opcoesRelatorio(Scanner sc) {
@@ -21,10 +27,9 @@ public class GerarRelatorio {
                 System.out.println("Escolha: ");
                 System.out.println("1 - Pesquisar aluno por nome");
                 System.out.println("2 - Relatório de todos os alunos matriculados (ordem alabética)");
-                System.out.println("3 - Relatório de alunos por turma");
-                System.out.println("4 - Relatório de profesores");
-                System.out.println("5 - Relatório de turmas");
-                System.out.println("6 - Voltar ao menu principal");
+                System.out.println("3- Relatório de todos os profesores");
+                System.out.println("4- Relatório de todas as turmas");
+                System.out.println("5 - Voltar ao menu principal");
                 System.out.println("Por favor, informe a opção desejada: ");
 
 
@@ -38,16 +43,11 @@ public class GerarRelatorio {
                     case 2:
                         gerenteStreamAluno.mostreOrdenadoPorNome();
                         break;
-                    case 3:
-//                        System.out.println("Digite o nome da turma que deseja pesquisar:");
-//                        String nomePesquisa = sc.next();
-//                        gerenteStreamAluno.pesquisarPorTurma(nomePesquisa);
-                        break;
-                    case 4:
-                        //  Relatório de profesores
+                     case 3:
+                        gerenteBancodeDadosProfessor.retornarProfessores().stream().forEach(System.out::println);
                         break;
                     case 5:
-                        // Relatório de turmas
+                        gerenteBancodeDadosTurma.retornarTurmas().stream().forEach(System.out::println);
                         break;
                     default:
                         if (opcaoMenu != OPCAO_SAIR) {

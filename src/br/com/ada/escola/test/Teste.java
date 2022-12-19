@@ -1,10 +1,7 @@
 package br.com.ada.escola.test;
 
-import br.com.ada.escola.enums.EnumDisciplina;
 import br.com.ada.escola.enums.EnumPeriodo;
 import br.com.ada.escola.enums.EnumSerie;
-import br.com.ada.escola.models.disciplina.Disciplina;
-import br.com.ada.escola.models.disciplina.DisciplinaBuilder;
 import br.com.ada.escola.models.pessoa.Aluno;
 import br.com.ada.escola.models.pessoa.professor.Professor;
 import br.com.ada.escola.models.pessoa.endereco.Endereco;
@@ -33,18 +30,11 @@ public class Teste implements Serializable{
         Professor professor = new Professor("Maria",
                 LocalDate.of(1990, 10, 22),
                 "09075896378",
-                endereco, null, null);
+                endereco);
 
 
-        Disciplina matematica = new DisciplinaBuilder()
-                .nomeDisciplina(EnumDisciplina.MATEMATICA)
-                .professor(professor)
-                .serie(EnumSerie.NONO_ANO_FUNDAMENTAL)
-                .dias(null)
-                .horario(LocalTime.of(14, 30))
-                .build();
 
-        Turma turma1 = new Turma("1C",EnumPeriodo.MATUTINO, matematica, professor);
+        Turma turma1 = new Turma("1C",EnumPeriodo.MATUTINO, professor);
 
         gerenteBancodeDadosAluno.cadastraAluno(
                 new Aluno("Lucas",
@@ -55,7 +45,6 @@ public class Teste implements Serializable{
                         "André",
                         1,
                         EnumSerie.PRIMEIRO_ANO_MEDIO,
-                        null,
                         turma1)
         );
         gerenteBancodeDadosAluno.retornarAlunos().stream().forEach(System.out::println);

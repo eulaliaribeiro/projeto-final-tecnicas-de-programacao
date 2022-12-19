@@ -18,9 +18,9 @@ public class GerenteDeArquivo {
 
         try {
             if (novoArquivo.createNewFile()) {
-           //     System.out.println("Arquivo criado com sucesso");
+               System.out.println("Arquivo criado com sucesso");
             } else {
-          //      System.out.println("Arquivo não criado");
+             System.out.println("Arquivo não criado");
             }
         } catch (IOException e) {
             System.out.println("Erro");
