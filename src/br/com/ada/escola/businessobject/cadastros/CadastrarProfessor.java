@@ -23,11 +23,13 @@ public class CadastrarProfessor {
             System.out.println("Digite o cpf do professor:");
             String cpf = sc.next();
 
+            sc.nextLine();
+
             System.out.println("\n- Agora vamos cadastrar o endereço do professor");
             Endereco endereco = CadastroEndereco.cadastra(sc);
 
             gerenteBancodeDadosProfessor.cadastraProfessor(new Professor(nome,
-                    LocalDate.of(2008, 9, 16),
+                    LocalDate.of(1996, 10, 28),
                     cpf,
                     endereco));
 

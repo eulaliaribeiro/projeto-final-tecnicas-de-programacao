@@ -17,13 +17,15 @@ public class MatricularAluno implements Serializable {
     static GerenteBancodeDadosAluno gerenteBancodeDadosAluno = new GerenteBancodeDadosAluno();
 
     public static void matricular(Scanner sc) throws IOException {
-        System.out.println("*** Cadastrro De Aluno ***");
+        System.out.println("*** Cadastro De Aluno ***");
 
         System.out.println("Digite o nome do aluno:");
         String nome = sc.next();
 
         System.out.println("Digite a matricula do aluno:");
         int matricula = sc.nextInt();
+
+        sc.nextLine();
 
         System.out.println("Digite o cpf do aluno:");
         String cpf = sc.next();
@@ -33,6 +35,8 @@ public class MatricularAluno implements Serializable {
 
         System.out.println("Digite o nome do pai do aluno:");
         String nomePai = sc.next();
+
+        sc.nextLine();
 
         System.out.println("\n- Agora vamos cadastrar o endereço do aluno");
         Endereco endereco = CadastroEndereco.cadastra(sc);

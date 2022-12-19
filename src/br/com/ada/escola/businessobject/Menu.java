@@ -10,7 +10,7 @@ public class Menu {
     static Scanner sc = new Scanner(System.in);
 
     public static void iniciando() {
-        System.out.println("\n********** Bem vindo ao sistema da escola Ada! **********");
+        System.out.println("\n********** Bem vindo ao sistema da Escola Ada! **********");
     }
 
     public static void principal() {
@@ -45,7 +45,7 @@ public class Menu {
                         opcaoMenu = OPCAO_SAIR;
                 }
             } catch (Exception e) {
-                System.out.println("Opcao invalida");
+                System.out.println("Opção invalida");
                 opcaoMenu = OPCAO_SAIR;
             }
         } while (opcaoMenu < OPCAO_SAIR);

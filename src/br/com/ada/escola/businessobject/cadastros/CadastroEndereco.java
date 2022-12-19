@@ -9,22 +9,22 @@ public class CadastroEndereco {
     public static Endereco cadastra(Scanner sc) {
 
         System.out.println("Digite a rua:");
-        String rua = sc.next();
+        String rua = sc.nextLine();
 
         System.out.println("Digite o numero da casa:");
-        String numero = sc.next();
+        String numero = sc.nextLine();
 
         System.out.println("Digite o CEP:");
-        String cep = sc.next();
+        String cep = sc.nextLine();
 
         System.out.println("Digite o bairro:");
-        String bairro = sc.next();
+        String bairro = sc.nextLine();
 
         System.out.println("Digite a cidade:");
-        String cidade = sc.next();
+        String cidade = sc.nextLine();
 
         System.out.println("Digite a UF:");
-        String uf = sc.next();
+        String uf = sc.nextLine();
 
 
         Endereco endereco = new EnderecoBuilder()
