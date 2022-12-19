@@ -2,7 +2,9 @@ package br.com.ada.escola.repository;
 
 import br.com.ada.escola.models.pessoa.Aluno;
 
+import java.time.LocalDate;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class GerenteStreamAluno {
     private GerenteBancodeDadosAluno gerenteBancodeDados;
@@ -22,13 +24,23 @@ public class GerenteStreamAluno {
 
     public void pesquisarPorTurma(String turma){
         gerenteBancodeDados.retornarAlunos().stream().
-                filter(item -> item.getTurma().getNomeTurma().contentEquals(turma))
+                filter(t -> t.getTurma().getNomeTurma().contentEquals(turma))
                 .forEach(System.out::println);
     }
     public void pesquisarPorNome(String nome){
         gerenteBancodeDados.retornarAlunos().stream().
-                filter(item -> item.getNome().toUpperCase().equals(nome.toUpperCase()))
+                filter(aluno -> aluno.getNome().toUpperCase().equals(nome.toUpperCase()))
                 .forEach(System.out::println);
     }
+
+    public void pesquisarPorMatricula(int matricula){
+        gerenteBancodeDados.retornarAlunos().stream().
+                filter(aluno -> {
+                    boolean isMatricula = aluno.getMatricula() == matricula;
+                    return isMatricula;
+                })
+                .forEach(System.out::println);
+    }
+
 
 }
